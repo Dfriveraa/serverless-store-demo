@@ -84,8 +84,7 @@ class Order:
         Output:
           An Order object.
         """
-        data = document.to_dict()
-        if data:
+        if data := document.to_dict():
             return Order(
                 id=document.id,
                 amount=data.get('amount'),

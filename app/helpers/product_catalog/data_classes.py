@@ -47,8 +47,7 @@ class Product:
         Output:
            A Product object.
         """
-        data = document.to_dict()
-        if data:
+        if data := document.to_dict():
             return Product(
                 id=document.id,
                 name=data.get('name'),
@@ -83,8 +82,7 @@ class PromoEntry:
         Output:
            A PromoEntry object.
         """
-        data = document.to_dict()
-        if data:
+        if data := document.to_dict():
             return PromoEntry(
                 id=document.id,
                 label=data.get('label'),
