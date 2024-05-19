@@ -41,12 +41,11 @@ def verify_firebase_id_token(token):
     except ValueError:
         return {}
 
-    auth_context = {
+    return {
         'username': full_auth_context.get('name'),
         'uid': full_auth_context.get('uid'),
         'email': full_auth_context.get('email')
     }
-    return auth_context
 
 
 def auth_required(f):

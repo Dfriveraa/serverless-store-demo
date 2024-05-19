@@ -42,8 +42,7 @@ class CartItem:
            A CartItem object.
         """
 
-        data = document.to_dict()
-        if data:
+        if data := document.to_dict():
             return CartItem(
                 document_id=document.id,
                 item_id=data.get('item_id'),

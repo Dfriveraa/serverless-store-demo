@@ -73,8 +73,7 @@ def list_products():
     """
 
     products = firestore_client.collection('products').order_by('created_at').get()
-    product_list = [Product.deserialize(product) for product in list(products)]
-    return product_list
+    return [Product.deserialize(product) for product in list(products)]
 
 
 def calculate_total_price(product_ids):

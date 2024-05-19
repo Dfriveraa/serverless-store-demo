@@ -65,8 +65,7 @@ def add(auth_context):
     """
 
     uid = auth_context.get('uid')
-    item_id = request.form.get('id')
-    if item_id:
+    if item_id := request.form.get('id'):
         carts.add_to_cart(uid, item_id)
         return "Operation completed.", 200
 
@@ -87,8 +86,7 @@ def remove(auth_context):
     """
 
     uid = auth_context.get('uid')
-    item_id = request.form.get('id')
-    if item_id:
+    if item_id := request.form.get('id'):
         carts.remove_from_cart(uid, item_id)
         return "Operation completed.", 200
 
